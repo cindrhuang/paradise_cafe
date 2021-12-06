@@ -7,6 +7,7 @@ import { DessertItem } from "../../DessertItem";
 export const Homepage = () => {
 
     const [desserts, setDesserts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect (() => {
         getDesserts();
@@ -21,22 +22,31 @@ export const Homepage = () => {
             });
 
             setDesserts(formattedData);
+            setLoading(false);
             
 
         } catch (err) {
             console.log(err);
+            setLoading(false);
         }
     }
 
     return (
         <div className="homepage">
             <div className="desserts-container">
+                {
+                    !loading // && filteredPets.length === 0 && <p>Nothing found for {searchString}!</p>
+                }
+                {
+                    loading && <p>Loading data...</p>
+                }
                 <DessertItem/>
                 {
                     desserts.map((desserts) => (
                         <DessertItem key={desserts.id.stringValue} id={desserts.id.stringValue} image={desserts.image.stringValue} name={desserts.name.stringValue} type={desserts.type.stringValue} details={desserts.details.stringValue}/>
                     ))
                 }
+                
             </div>
         </div>
     )

@@ -6,8 +6,9 @@ import {
   Route 
 } from "react-router-dom";
 
-import { Navbar } from './components/Navbar';
-import { Homepage } from './components/Pages/DessertsHomePage';
+import { Navbar } from "./components/Navbar";
+import { Homepage } from "./components/Pages/DessertsHomePage";
+import { DessertsDetailsPage } from "./components/Pages/DessertsDetailsPage";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage/>
+          </Route>
+          <Route path="/dessert/:id">
+            <DessertsDetailsPage/>
           </Route>
         </Switch>
 
