@@ -12,12 +12,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB5MIELH0i4qNp5pGq0BLTXBmFpDhPu1aY",
-  authDomain: "paradise-cafe-4012.firebaseapp.com",
-  projectId: "paradise-cafe-4012",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: "paradise-cafe-4012.appspot.com",
-  messagingSenderId: "981234757029",
-  appId: "1:981234757029:web:3d5e03ef8b10f578bccc4c"
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase

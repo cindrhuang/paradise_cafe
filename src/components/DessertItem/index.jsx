@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import samplePhoto from "../../images/chocorollcake.PNG"
 
 export const DessertItem = (props) => {
-    const {image, name, type, details, id} = props;
+    const {image, name, type, details, moreDetails, id} = props;
 
     return (
         <div className="dessert">
@@ -17,6 +17,7 @@ export const DessertItem = (props) => {
 
             <p className="dess-type"> {"Type: " + type} </p>
             <p className="dess-details"> {details} </p>
+            <p hidden> {moreDetails} </p>
         </div>
     )
 }

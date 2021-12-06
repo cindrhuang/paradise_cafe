@@ -15,14 +15,17 @@ export const DessertsDetailsPage = (props) => {
         const dessert = globalState.desserts.find(
             (dessert) => dessert.id.stringValue === id
         );
+        console.log(dessert);
         setDessert(dessert);
     }, [])
 
     if (dessert) {
         return (
-            <div className="desserts-page">
-                <h1 className="desserts-title"> {dessert.name?.stringValue} </h1>
+            <div className="dessert-page">
                 <img src={dessert.image?.stringValue} alt="dessert photo"></img>
+                <h1 className="dess-title"> ✧･ﾟ:* {dessert.name?.stringValue} *:･ﾟ✧ </h1>
+                <p className="dessert-type"> {dessert.type?.stringValue} </p>
+                <p className="dess-more"> {dessert.moreDetails?.stringValue} </p>
             </div>
         )
     } else {
